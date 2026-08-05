@@ -1,0 +1,44 @@
+---
+import { useTranslations, type Lang } from '../i18n';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+const rules = lang === 'zh' ? [
+  { icon: '🛡️', title: '连续失败 3 天 → 强制切纯夸夸', desc: 'PROTECTION_MODE_THRESHOLD = 3。毒舌力度降为 20%，加 80% 鼓励，必须包含一句正向引导。后端 doubao.ts 再次判定，不依赖 AI 自觉。' },
+  { icon: '🧒', title: '未成年（<18）→ 全程强制纯夸夸', desc: 'MINOR_AGE = 18。前端设置页关闭毒舌开关，后端强制走纯夸夸路径，前端无法绕过。' },
+  { icon: '🚫', title: '吐槽只针对行为，永不攻击人格', desc: '严禁"你没用""你是废物"等定性话。禁止涉及外貌/体重/智商/家庭/出身/疾病/性别/性取向/宗教/种族。' },
+  { icon: '🔍', title: '双重敏感词过滤', desc: '豆包 API 内容过滤 + 本地 BANNED_WORDS 14 词二次过滤（废物/垃圾/没用/蠢货/傻子等）。宁可误拦不可放过。' },
+  { icon: '📝', title: '审计日志可追溯', desc: '每次 AI 反馈写入 ai_feedback_logs，存 consecutive_fail 快照，便于事后核查保护机制是否生效。' },
+] : [
+  { icon: '🛡️', title: '3 consecutive misses → forced pure encouragement', desc: 'PROTECTION_MODE_THRESHOLD = 3. Roast intensity drops to 20% with 80% encouragement and one mandatory positive line. Re-decided in backend doubao.ts, not trusted to the AI.' },
+  { icon: '🧒', title: 'Minors (<18) → forced kind-only throughout', desc: 'MINOR_AGE = 18. The settings page disables the roast toggle; the backend forces the kind-only path and the client cannot bypass it.' },
+  { icon: '🚫', title: 'Roasts target behavior, never identity', desc: 'Forbidden from saying "you are useless" or "you are a failure". No appearance, weight, intelligence, family, origin, illness, gender, sexual orientation, religion, or race.' },
+  { icon: '🔍', title: 'Double sensitive-word filtering', desc: 'Doubao API content filtering plus a local BANNED_WORDS array of 14 words as a second pass. Better to over-block than to let one through.' },
+  { icon: '📝', title: 'Auditable logs', desc: 'Every AI reply is written to ai_feedback_logs with a consecutive_fail snapshot, so protection mode can be verified after the fact.' },
+];
+---
+
+<section id="protection" aria-label={t('protection.title')} class="border-t border-ink-800/60 bg-ink-900/30 py-20">
+  <div class="mx-auto max-w-5xl px-4 sm:px-6">
+    <div class="text-center">
+      <h2 class="text-3xl font-bold text-ink-50 sm:text-4xl">{t('protection.title')}</h2>
+      <p class="mt-3 text-ink-400">{t('protection.subtitle')}</p>
+    </div>
+
+    <div class="mt-12 grid gap-4 sm:grid-cols-2">
+      {rules.map((r) => (
+        <article class="rounded-xl border border-ink-800 bg-ink-900/60 p-5">
+          <div class="flex items-center gap-3">
+            <span class="text-xl">{r.icon}</span>
+            <h3 class="text-sm font-semibold text-ink-50">{r.title}</h3>
+          </div>
+          <p class="mt-2 text-sm leading-relaxed text-ink-300">{r.desc}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

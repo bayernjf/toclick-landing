@@ -1,0 +1,44 @@
+---
+import { useTranslations, type Lang } from '../i18n';
+import { personasData } from '../data/features';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const personas = personasData[lang];
+---
+
+<section id="personas" aria-label={t('personas.title')} class="border-t border-ink-800/60 py-20">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6">
+    <div class="text-center">
+      <h2 class="text-3xl font-bold text-ink-50 sm:text-4xl">{t('personas.title')}</h2>
+      <p class="mt-3 text-ink-400">{t('personas.subtitle')}</p>
+    </div>
+
+    <div class="mt-12 grid gap-6 md:grid-cols-2">
+      {personas.map((p) => (
+        <article class="rounded-2xl border border-ink-800 bg-ink-900/40 p-6 transition hover:border-brand-500/40">
+          <div class="flex items-center gap-3">
+            <span class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-ink-800 text-2xl">{p.emoji}</span>
+            <div>
+              <h3 class="text-lg font-semibold text-ink-50">{p.label}</h3>
+              <p class="text-xs text-brand-300">{p.tagline}</p>
+            </div>
+          </div>
+
+          <blockquote class="mt-5 rounded-lg border-l-2 border-brand-500 bg-ink-950/60 px-4 py-3 text-sm italic text-ink-200">
+            “{p.sample}”
+          </blockquote>
+
+          <ul class="mt-4 flex flex-wrap gap-2">
+            {p.traits.map((trait) => (
+              <li class="rounded-full border border-ink-700 bg-ink-800/60 px-2.5 py-1 text-xs text-ink-300">{trait}</li>
+            ))}
+          </ul>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
