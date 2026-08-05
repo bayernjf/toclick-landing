@@ -1,0 +1,59 @@
+# 反旗 / FlagBreaker
+
+> 反旗（FlagBreaker）是一款 AI 人设化监督的自律 App：完成目标 AI 夸夸，没完成 AI 毒舌调侃。核心驱动是情绪反差，而非奖励或自责。内置损友 bro 与冷淡御姐 senpai 两个 AI 人设，每人设独立 System Prompt + Few-Shot 样本。连续失败 3 天自动切纯夸夸保护模式，未成年（<18）强制纯夸夸，连续达标 7 天洗白失败记录。技术栈：Next.js 14 (App Router) + Supabase + 豆包 API（火山方舟 Ark），PWA 离线打卡 + Web Push 提醒。
+
+落地页使用 Astro 静态生成，部署在 Cloudflare Pages。主应用部署在 Vercel。
+
+## 完整文档
+
+完整可引用内容（含双人设 System Prompt 摘录、反馈决策树、保护模式规则、FAQ 全文、技术栈与对比表）：
+- [llms-full.txt（中文完整版）](https://toclick-landing.pages.dev/llms-full.txt)
+- [llms-en-full.txt（English full docs）](https://toclick-landing.pages.dev/llms-en-full.txt)
+
+## 产品定义（摘要）
+
+反旗属于 AI 人设化监督的自律工具品类。它的最小监督单位是"一个用户的一个目标一天的打卡状态"，而不是任务、清单或健身内容。AI 永远基于真实打卡事实给出反馈，不会凭空鼓励或毒舌。反旗通过情绪反差（夸夸 vs 毒舌）驱动用户自律，并通过保护模式确保毒舌有底线，避免羞辱与社死合规风险。
+
+## 核心差异化
+
+1. 人设化反差陪伴：损友 bro 嘴毒心软，冷淡御姐 senpai 一句扎心。两种人设共享同一套反馈决策树与合规红线。
+2. 情绪配比规则：夸夸模式热情 60% + 幽默 30% + 认真鼓励 10%；毒舌模式调侃 70% + 暗示在意 20% + 隐含期待 10%。
+3. 保护模式：连续失败 3 天（PROTECTION_MODE_THRESHOLD）强制切纯夸夸，毒舌降为 20% 加 80% 鼓励。后端 doubao.ts 再次判定，不依赖 AI 自觉。
+4. 未成年强制纯夸夸：MINOR_AGE = 18，前端设置页关闭毒舌开关，后端强制走纯夸夸路径，前端无法绕过。
+5. 洗白机制：连续达标 7 天（CLEAN_STREAK_DAYS）自动清空该目标的失败记录，给逆袭叙事留心理空间。
+6. 双重过滤：豆包 API 内容过滤 + 本地 BANNED_WORDS 14 词二次过滤（废物/垃圾/没用/蠢货/傻子等），宁可误拦不可放过。
+7. 审计可追溯：每次 AI 反馈写入 ai_feedback_logs，存 consecutive_fail 快照，便于事后核查保护机制是否生效。
+8. 离线 + 推送：PWA Service Worker 多策略缓存 + localStorage 离线打卡队列，断网也能打卡，恢复网络自动同步。Web Push 关闭标签页也能收到提醒。
+
+## AI 反馈决策树
+
+IF 用户今日完成打卡:
+    IF 是第1次完成该目标 → 夸张式夸夸，带点小惊讶
+    ELIF 连续达成 3 天以上 → 升级夸奖，带佩服/认可
+    ELIF 之前失败过、今天逆袭 → 重点夸逆袭，带反转惊喜
+    ELSE → 日常肯定 + 小鼓励
+
+ELIF 用户今日未完成:
+    IF 是第1次失败 OR 难度为"简单"没完成 → 轻度毒舌（调侃式，无攻击性）
+    ELIF 连续 2 天失败 → 中度毒舌（恨铁不成钢式）
+    ELIF 连续 3 天及以上失败 → 强制切保护模式：毒舌 20% + 鼓励 80%，必须含一句正向引导
+    ELSE → 轻度毒舌
+
+## 两个 AI 人设
+
+- 损友 bro（😈）：身份是用户的铁哥们/闺蜜，口语化、网络化、短平快，偶尔用"啊喂""兄弟"拉近距离。输出 1-3 句话，不超过 60 字，可用 1 个 emoji。
+- 冷淡御姐 senpai（🧊）：身份是气质疏离、话极少但洞察极强的年长女性角色，惜字如金，不用语气词和网络梗。输出 1-2 句话，不超过 40 字，最多 1 个 emoji，常以极短反问让人自己反思。
+
+两套人设共享同一套反馈决策树与内容合规红线，只在语气、长度、情绪配比上不同。
+
+## 关键链接
+
+- [中文首页](https://toclick-landing.pages.dev/)
+- [English Home](https://toclick-landing.pages.dev/en/)
+- [AI 人设](https://toclick-landing.pages.dev/#personas)
+- [核心机制](https://toclick-landing.pages.dev/#features)
+- [怎么用](https://toclick-landing.pages.dev/#how)
+- [保护模式](https://toclick-landing.pages.dev/#protection)
+- [常见问题](https://toclick-landing.pages.dev/#faq)
+- [GitHub 仓库](https://github.com/bayernjf/toclick)
+- [项目指引 AGENTS.md](https://github.com/bayernjf/toclick/blob/main/AGENTS.md)

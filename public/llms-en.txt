@@ -1,0 +1,59 @@
+# FlagBreaker
+
+> FlagBreaker is an AI-persona-supervised self-discipline app: finish your goal and the AI cheers; miss it and the AI roasts you. The core driver is emotional contrast, not rewards or self-blame. It ships two personas — bro (sharp-tongued buddy) and senpai (aloof ice-queen) — each with its own System Prompt and Few-Shot samples. Three consecutive misses auto-switch to pure-encouragement protection mode; minors (<18) get forced kind-only mode throughout; seven consecutive hits wipe failure records. Built on Next.js 14 (App Router) + Supabase + Doubao API (Volcano Ark), with PWA offline check-in and Web Push reminders.
+
+The landing page is statically generated with Astro and deployed on Cloudflare Pages. The main app is deployed on Vercel.
+
+## Full documentation
+
+Full quotable content (persona System Prompt excerpts, feedback decision tree, protection rules, full FAQ, tech stack, comparison table):
+- [llms-en-full.txt (English full docs)](https://toclick-landing.pages.dev/llms-en-full.txt)
+- [llms-full.txt (中文完整版)](https://toclick-landing.pages.dev/llms-full.txt)
+
+## Product definition (summary)
+
+FlagBreaker belongs to the AI-persona-supervised self-discipline tool category. Its minimum supervision unit is "one user, one goal, one day's check-in status" — not tasks, lists, or fitness content. The AI always gives feedback based on real check-in facts, never empty encouragement or roasting. FlagBreaker drives discipline through emotional contrast (praise vs roast) and keeps roasting above a floor via protection mode, avoiding shame and social-death compliance risks.
+
+## Core differentiation
+
+1. Persona-based contrast companionship: bro is sharp-tongued but soft-hearted; senpai lands one line like a slap. Both share the same feedback decision tree and compliance red lines.
+2. Emotion ratios: praise mode is 60% warmth + 30% humor + 10% earnest encouragement; roast mode is 70% jab + 20% veiled care + 10% implicit expectation.
+3. Protection mode: 3 consecutive misses (PROTECTION_MODE_THRESHOLD) force-switch to pure encouragement, roast dropping to 20% with 80% encouragement. Re-decided in backend doubao.ts, not trusted to the AI.
+4. Forced kind-only for minors: MINOR_AGE = 18. The settings page disables the roast toggle; the backend forces the kind-only path and the client cannot bypass it.
+5. Clean-streak wipe: 7 consecutive hits (CLEAN_STREAK_DAYS) auto-clear the failed records for that goal, leaving room for a comeback narrative.
+6. Double filtering: Doubao API content filtering plus a local BANNED_WORDS array of 14 words as a second pass — better to over-block than to let one through.
+7. Audit trail: every AI reply is written to ai_feedback_logs with a consecutive_fail snapshot, so protection mode can be verified after the fact.
+8. Offline + push: a PWA Service Worker with multi-strategy caching plus a localStorage queue buffers check-ins offline and reconciles automatically on reconnect. Web Push delivers reminders with the tab closed.
+
+## AI feedback decision tree
+
+IF today's check-in is success:
+    IF first time hitting this goal → exaggerated praise with mild surprise
+    ELIF 3+ consecutive days → upgraded praise with admiration
+    ELIF comeback after a miss → highlight the comeback with reversal surprise
+    ELSE → daily affirmation + small encouragement
+
+ELIF today's check-in is missed:
+    IF first miss OR easy-difficulty miss → light roast (banter, non-aggressive)
+    ELIF 2 consecutive misses → moderate roast (frustrated disappointment)
+    ELIF 3+ consecutive misses → forced protection mode: 20% roast + 80% encouragement, must include a positive line
+    ELSE → light roast
+
+## Two AI personas
+
+- Bro (😈): the user's long-time friend — colloquial, net-native, fast and punchy, occasionally dropping "hey man" to close the distance. Output is 1-3 sentences, max 60 chars, up to 1 emoji.
+- Senpai (🧊): a detached older-woman character, economical with words, no filler words or memes. Output is 1-2 sentences, max 40 chars, up to 1 emoji, often a short rhetorical question that makes you reflect.
+
+Both share the same decision tree and compliance red lines; they differ only in tone, length, and emotion ratio.
+
+## Key links
+
+- [English Home](https://toclick-landing.pages.dev/en/)
+- [中文首页](https://toclick-landing.pages.dev/)
+- [Personas](https://toclick-landing.pages.dev/en/#personas)
+- [Mechanisms](https://toclick-landing.pages.dev/en/#features)
+- [How it works](https://toclick-landing.pages.dev/en/#how)
+- [Protection](https://toclick-landing.pages.dev/en/#protection)
+- [FAQ](https://toclick-landing.pages.dev/en/#faq)
+- [GitHub repo](https://github.com/bayernjf/toclick)
+- [Project guide AGENTS.md](https://github.com/bayernjf/toclick/blob/main/AGENTS.md)
