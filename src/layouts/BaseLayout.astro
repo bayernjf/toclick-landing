@@ -1,0 +1,43 @@
+---
+import SEO from '../components/SEO.astro';
+import { getLangFromUrl, type Lang } from '../i18n';
+import { SITE_TITLE, SITE_TITLE_EN, SITE_DESCRIPTION, SITE_DESCRIPTION_EN } from '../consts';
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  lang?: Lang;
+  ogImage?: string;
+  faqSchema?: Array<{ question: string; answer: string }>;
+  extraSchema?: object | object[];
+}
+
+const { title, description, lang, ogImage, faqSchema, extraSchema } = Astro.props;
+const currentLang: Lang = lang ?? getLangFromUrl(Astro.url);
+
+const defaultTitle = currentLang === 'zh' ? SITE_TITLE : SITE_TITLE_EN;
+const defaultDesc = currentLang === 'zh' ? SITE_DESCRIPTION : SITE_DESCRIPTION_EN;
+const pageTitle = title ?? defaultTitle;
+const pageDescription = description ?? defaultDesc;
+---
+
+<!doctype html>
+<html lang={currentLang === 'zh' ? 'zh-CN' : 'en'}>
+  <head>
+    <SEO
+      title={pageTitle}
+      description={pageDescription}
+      lang={currentLang}
+      pathname={Astro.url.pathname}
+      ogImage={ogImage}
+      faqSchema={faqSchema}
+      extraSchema={extraSchema}
+    />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="theme-color" content="#ff9f43" />
+  </head>
+  <body class="min-h-screen bg-ink-950 text-ink-100 antialiased">
+    <slot />
+  </body>
+</html>
