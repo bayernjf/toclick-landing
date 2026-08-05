@@ -1,0 +1,47 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Hero from '../components/Hero.astro';
+import Personas from '../components/Personas.astro';
+import Features from '../components/Features.astro';
+import HowItWorks from '../components/HowItWorks.astro';
+import Protection from '../components/Protection.astro';
+import FAQ from '../components/FAQ.astro';
+import CTA from '../components/CTA.astro';
+import Footer from '../components/Footer.astro';
+import { faqData } from '../data/faq';
+import { stepsData } from '../data/features';
+
+const lang = 'zh' as const;
+const faqSchema = faqData[lang];
+const steps = stepsData[lang];
+
+// HowTo schema：让 AI 搜索识别"如何使用反旗"
+const howToSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: '如何使用反旗 FlagBreaker',
+  description: '三步用上反旗：立 flag、打卡、接收 AI 人设化反馈',
+  inLanguage: 'zh-CN',
+  step: steps.map((s, i) => ({
+    '@type': 'HowToStep',
+    position: i + 1,
+    name: s.title,
+    text: s.desc,
+  })),
+};
+---
+
+<BaseLayout lang={lang} faqSchema={faqSchema} extraSchema={howToSchema}>
+  <Nav lang={lang} />
+  <main>
+    <Hero lang={lang} />
+    <Personas lang={lang} />
+    <Features lang={lang} />
+    <HowItWorks lang={lang} />
+    <Protection lang={lang} />
+    <FAQ lang={lang} />
+    <CTA lang={lang} />
+  </main>
+  <Footer lang={lang} />
+</BaseLayout>
