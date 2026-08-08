@@ -63,17 +63,17 @@ export const faqData: Record<'zh' | 'en', FaqItem[]> = {
     {
       question: 'What is FlagBreaker?',
       answer:
-        'FlagBreaker is an AI-persona-supervised self-discipline app: finish your goal and the AI cheers; miss it and the AI roasts you. The core driver is emotional contrast, not cold reminders or self-blame. It ships two AI personas — bro (your sharp-tongued buddy) and senpai (an aloof ice-queen) — each with its own System Prompt and Few-Shot samples. Built on Next.js 14 + Supabase + Doubao API (Volcano Ark), with PWA offline check-in and Web Push reminders.',
+        'FlagBreaker is an AI-persona-supervised self-discipline app: finish your goal and the AI cheers; miss it and the AI roasts you. The core driver is emotional contrast, not cold reminders or self-blame. It ships two AI personas, bro (your sharp-tongued buddy) and senpai (an aloof ice-queen), each with its own System Prompt and Few-Shot samples. Built on Next.js 14 + Supabase + Doubao API (Volcano Ark), with PWA offline check-in and Web Push reminders.',
     },
     {
       question: 'How do the two AI personas differ?',
       answer:
-        'Bro is your long-time friend — colloquial, net-native, fast and punchy, occasionally dropping "hey man" to close the distance; replies are 1-3 sentences, max 60 chars. Senpai is a detached older-woman character, economical with words, 1-2 sentences max 40 chars, no filler words or memes, using one short rhetorical question to make you reflect. Both share the same feedback decision tree and compliance red lines.',
+        'Bro is your long-time friend: colloquial, net-native, fast and punchy, occasionally dropping "hey man" to close the distance; replies are 1-3 sentences, max 60 chars. Senpai is a detached older-woman character, economical with words, 1-2 sentences max 40 chars, no filler words or memes, using one short rhetorical question to make you reflect. Both share the same feedback decision tree and compliance red lines.',
     },
     {
       question: 'How does AI feedback decide what to say? Is it random?',
       answer:
-        'Not random. A strict decision tree applies: first success triggers exaggerated praise; 3+ days of consecutive success upgrades the praise; a comeback after a miss highlights the comeback; two consecutive misses trigger moderate roasting; 3+ consecutive misses force protection mode (80% encouragement + 20% roast with one positive line); first miss or easy-goal miss gets light roast. Emotion ratios are fixed too — praise mode is 60% warmth + 30% humor + 10% earnest encouragement.',
+        'Not random. A strict decision tree applies: first success triggers exaggerated praise; 3+ days of consecutive success upgrades the praise; a comeback after a miss highlights the comeback; two consecutive misses trigger moderate roasting; 3+ consecutive misses force protection mode (80% encouragement + 20% roast with one positive line); first miss or easy-goal miss gets light roast. Emotion ratios are fixed too: praise mode is 60% warmth + 30% humor + 10% earnest encouragement.',
     },
     {
       question: 'What is protection mode and when does it trigger?',
@@ -93,12 +93,12 @@ export const faqData: Record<'zh' | 'en', FaqItem[]> = {
     {
       question: 'What goal types are supported? Can I customize?',
       answer:
-        'MVP ships 3 goal types — early_rise, fitness, study. Each has 3 difficulty levels: easy (miss it and you get roasted hard), medium (normal intensity), hard (the AI understands if you miss). Check-in has 3 states: success, failed, skipped (rest day). Custom goal types are planned for P1.',
+        'MVP ships 3 goal types: early_rise, fitness, study. Each has 3 difficulty levels: easy (miss it and you get roasted hard), medium (normal intensity), hard (the AI understands if you miss). Check-in has 3 states: success, failed, skipped (rest day). Custom goal types are planned for P1.',
     },
     {
       question: 'Can I check in offline? Will I lose data?',
       answer:
-        'Yes. A PWA Service Worker with multi-strategy caching plus a localStorage offline queue (offlineQueue.ts) buffers check-ins while offline; once back online, /api/checkin/sync reconciles automatically. Dashboard triggers replayQueue() on launch. Web Push notifications are independent of the open tab — you still get reminders and failure pings with the tab closed.',
+        'Yes. A PWA Service Worker with multi-strategy caching plus a localStorage offline queue (offlineQueue.ts) buffers check-ins while offline; once back online, /api/checkin/sync reconciles automatically. Dashboard triggers replayQueue() on launch. Web Push notifications are independent of the open tab; you still get reminders and failure pings with the tab closed.',
     },
     {
       question: 'How is FlagBreaker different from Forest, TickTick, or Keep?',
@@ -108,7 +108,7 @@ export const faqData: Record<'zh' | 'en', FaqItem[]> = {
     {
       question: 'Is my data safe? Can others see my check-ins?',
       answer:
-        'Supabase PostgreSQL has Row Level Security (RLS) on every table — users can only read and write their own rows. CSP and HTTP security headers (X-Frame-Options: DENY, X-Content-Type-Options: nosniff, etc.) are set in next.config.js. Every API route validates input with Zod. /api/checkin is rate-limited to 10/60s, /api/ai-feedback to 5/60s via a sliding-window algorithm. Server-side keys like ARK_API_KEY and CRON_SECRET never carry the NEXT_PUBLIC_ prefix and are never exposed to the browser.',
+        'Supabase PostgreSQL has Row Level Security (RLS) on every table: users can only read and write their own rows. CSP and HTTP security headers (X-Frame-Options: DENY, X-Content-Type-Options: nosniff, etc.) are set in next.config.js. Every API route validates input with Zod. /api/checkin is rate-limited to 10/60s, /api/ai-feedback to 5/60s via a sliding-window algorithm. Server-side keys like ARK_API_KEY and CRON_SECRET never carry the NEXT_PUBLIC_ prefix and are never exposed to the browser.',
     },
   ],
 };
