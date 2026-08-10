@@ -57,7 +57,7 @@ await new Promise((r) => server.once('listening', r));
 // If dist/zh/index.html exists, the Chinese version lives at /zh/.
 // If dist/en/index.html exists, the English version lives at /en/.
 // Otherwise the locale lives at the root / (monolingual project or
-// root-is-zh + en/ subdir pattern).
+// root-is-en + zh/ subdir pattern).
 const hasZhDir = existsSync(join(DIST, 'zh', 'index.html'));
 const hasEnDir = existsSync(join(DIST, 'en', 'index.html'));
 const zhUrl = hasZhDir ? '/zh/' : '/';

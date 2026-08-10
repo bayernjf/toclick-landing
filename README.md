@@ -11,7 +11,7 @@
 - **Astro 7**（静态生成，零 JS 默认）
 - **Tailwind 4**（via `@tailwindcss/vite`）
 - **@astrojs/sitemap**（含 hreflang）
-- 中英双语 i18n（`/` = 中文，`/en/` = 英文）
+- 中英双语 i18n（`/` = 英文，`/zh/` = 中文）
 
 ## 目录结构
 

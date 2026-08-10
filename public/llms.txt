@@ -48,12 +48,12 @@ ELIF 用户今日未完成:
 
 ## 关键链接
 
-- [中文首页](https://toclick-landing.pages.dev/)
-- [English Home](https://toclick-landing.pages.dev/en/)
-- [AI 人设](https://toclick-landing.pages.dev/#personas)
-- [核心机制](https://toclick-landing.pages.dev/#features)
-- [怎么用](https://toclick-landing.pages.dev/#how)
-- [保护模式](https://toclick-landing.pages.dev/#protection)
-- [常见问题](https://toclick-landing.pages.dev/#faq)
+- [中文首页](https://toclick-landing.pages.dev/zh/)
+- [English Home](https://toclick-landing.pages.dev/)
+- [AI 人设](https://toclick-landing.pages.dev/zh/#personas)
+- [核心机制](https://toclick-landing.pages.dev/zh/#features)
+- [怎么用](https://toclick-landing.pages.dev/zh/#how)
+- [保护模式](https://toclick-landing.pages.dev/zh/#protection)
+- [常见问题](https://toclick-landing.pages.dev/zh/#faq)
 - [GitHub 仓库](https://github.com/bayernjf/toclick)
 - [项目指引 AGENTS.md](https://github.com/bayernjf/toclick/blob/main/AGENTS.md)
