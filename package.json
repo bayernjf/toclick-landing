@@ -8,10 +8,11 @@
   },
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "astro build && node scripts/shot.mjs",
     "preview": "astro preview",
     "check": "astro check",
-    "astro": "astro"
+    "astro": "astro",
+    "shot": "node scripts/shot.mjs"
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.19",
@@ -23,6 +24,7 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.4",
-    "typescript": "^5.8.2"
+    "typescript": "^5.8.2",
+    "playwright": "^1.62.1"
   }
 }
