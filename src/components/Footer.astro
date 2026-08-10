@@ -14,7 +14,9 @@ const links = [
   { href: SOCIAL.github, label: 'GitHub', external: true },
   { href: SOCIAL.docs, label: lang === 'zh' ? '文档' : 'Docs', external: true },
   { href: SOCIAL.app, label: lang === 'zh' ? '打开 App' : 'Open App', external: true },
-  { href: 'https://bayjf.pages.dev', label: 'BayJF', external: true },
+  { href: 'https://bayjf.com', label: 'BayJF', external: true },
+  { href: localizePath('/privacy', lang), label: lang === 'zh' ? '隐私政策' : 'Privacy' },
+  { href: localizePath('/terms', lang), label: lang === 'zh' ? '服务条款' : 'Terms' },
 ];
 ---
 
@@ -22,7 +24,11 @@ const links = [
   <div class="mx-auto max-w-6xl px-4 py-12 sm:px-6">
     <div class="flex flex-col items-center justify-between gap-6 sm:flex-row">
       <div class="flex items-center gap-2">
-        <span class="inline-flex h-6 w-6 items-center justify-center rounded bg-brand-500 text-[10px] font-bold text-white">旗</span>
+        <svg viewBox="0 0 64 64" class="h-6 w-6" aria-hidden="true">
+          <rect width="64" height="64" rx="14" fill="#ff9f43" />
+          <path d="M20 14 L20 50 M20 14 L40 14 M20 30 L36 30" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+          <path d="M44 38 L52 46 L60 38" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+        </svg>
         <div>
           <p class="text-sm font-medium text-ink-100">{brandName}</p>
           <p class="text-xs text-ink-500">{t('footer.tagline')}</p>

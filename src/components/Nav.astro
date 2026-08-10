@@ -24,7 +24,11 @@ const altLangHref = getAltLangPath(Astro.url.pathname, altLang);
 <header class="sticky top-0 z-50 border-b border-ink-800/60 bg-ink-950/80 backdrop-blur-md">
   <nav class="mx-auto flex h-14 max-w-6xl items-center justify-between px-4 sm:px-6">
     <a href={localizePath('/', lang)} class="flex items-center gap-2 text-base font-semibold text-ink-50">
-      <span class="inline-flex h-7 w-7 items-center justify-center rounded-md bg-brand-500 text-sm font-bold text-white">旗</span>
+      <svg viewBox="0 0 64 64" class="h-7 w-7" aria-hidden="true">
+        <rect width="64" height="64" rx="14" fill="#ff9f43" />
+        <path d="M20 14 L20 50 M20 14 L40 14 M20 30 L36 30" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+        <path d="M44 38 L52 46 L60 38" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+      </svg>
       <span>{brandName}</span>
     </a>
 
@@ -38,6 +42,12 @@ const altLangHref = getAltLangPath(Astro.url.pathname, altLang);
       <a href={altLangHref} class="rounded-md px-2 py-1 text-xs text-ink-400 transition hover:text-ink-100">
         {t('nav.langSwitch')}
       </a>
+      <a
+        href="https://bayjf.com"
+        target="_blank"
+        rel="noopener"
+        class="hidden rounded-md px-2 py-1.5 text-xs text-ink-300 transition hover:text-ink-50 sm:inline-block"
+      >BayJF</a>
       <a
         href={SOCIAL.github}
         target="_blank"

@@ -55,19 +55,19 @@ export const ui = {
     'nav.langSwitch': '简体中文',
 
     'hero.badge': 'Reverse self-discipline · AI persona supervision',
-    'hero.title': 'A flag for every thousand who raise one — yours is the one that falls',
+    'hero.title': 'A flag for every thousand who raise one, yours is the one that falls',
     'hero.subtitle': 'FlagBreaker is a self-discipline app where a sharp-tongued AI buddy stares you down until the job is done. Hit the goal and the AI cheers; miss it and the AI roasts you. Pick bro (your foul-mouthed, soft-hearted friend) or senpai (an aloof ice-queen whose one line lands like a slap). After 3 days of consecutive misses it auto-switches to pure encouragement; minors get kind-only mode throughout; a 7-day clean streak wipes failure records.',
     'hero.cta.primary': 'Start with FlagBreaker',
     'hero.cta.secondary': 'Read the product constitution',
 
     'personas.title': 'Two AIs watching you',
-    'personas.subtitle': 'Not a cold assistant — real characters who roast you and pull you back up',
+    'personas.subtitle': 'Not a cold assistant: real characters who roast you and pull you back up',
 
     'features.title': 'Core mechanisms',
     'features.subtitle': 'Emotional contrast + safety rails + real facts, so discipline stops relying on raw willpower',
 
     'how.title': 'Three steps to use FlagBreaker',
-    'how.subtitle': 'From raising a flag to wiping failure records — the shortest path through one cycle',
+    'how.subtitle': 'From raising a flag to wiping failure records: the shortest path through one cycle',
 
     'protection.title': 'Protection mode: roasting has a floor',
     'protection.subtitle': 'Three consecutive misses force-switch to pure encouragement; minors (<18) get kind-only mode end to end; roasts target behavior, never identity',

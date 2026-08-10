@@ -43,7 +43,7 @@ export const featuresData: Record<'zh' | 'en', Feature[]> = {
     {
       icon: '😈',
       title: 'AI-persona contrast feedback',
-      desc: 'Bro is sharp-tongued but soft-hearted; senpai lands one line like a slap. Emotion ratios switch by state — praise is 60% warmth + 30% humor, roast is 70% jab + 20% veiled care. No rewards, no self-blame; contrast drives discipline.',
+      desc: 'Bro is sharp-tongued but soft-hearted; senpai lands one line like a slap. Emotion ratios switch by state: praise is 60% warmth + 30% humor, roast is 70% jab + 20% veiled care. No rewards, no self-blame; contrast drives discipline.',
     },
     {
       icon: '🛡️',
@@ -53,7 +53,7 @@ export const featuresData: Record<'zh' | 'en', Feature[]> = {
     {
       icon: '🔄',
       title: 'Clean-streak wipe',
-      desc: 'Seven consecutive hits auto-clear the failed records for that goal, leaving room for a comeback narrative. Failure is not the end — sustained consistency erases the black history.',
+      desc: 'Seven consecutive hits auto-clear the failed records for that goal, leaving room for a comeback narrative. Failure is not the end: sustained consistency erases the black history.',
     },
     {
       icon: '📱',
@@ -107,7 +107,7 @@ export const personasData: Record<'zh' | 'en', Persona[]> = {
       emoji: '😈',
       label: 'Bro',
       tagline: 'Sharp-tongued buddy, roast-style supervision',
-      sample: 'Not bad, bro. First day and the flag is still standing — didn’t see that coming 🫡',
+      sample: 'Not bad, bro. First day and the flag is still standing; didn’t see that coming 🫡',
       traits: ['Colloquial', 'Fast and punchy', '1-3 sentences', '≤60 chars', 'Up to 1 emoji'],
     },
     {
