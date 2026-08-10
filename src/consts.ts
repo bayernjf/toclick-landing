@@ -13,7 +13,7 @@ export const SITE_DESCRIPTION_EN =
   'FlagBreaker is an AI-supervised self-discipline app: finish your goal and the AI cheers; miss it and the AI roasts you. Ships two personas, bro (your sharp-tongued buddy) and senpai (an aloof ice-queen), with a protection mode that auto-switches to pure encouragement after 3 days of consecutive misses, a forced kind-only mode for minors, and a 7-day clean streak that wipes failure records. Built on Next.js + Supabase + Doubao API (Volcano Ark), with PWA offline check-in and Web Push reminders.';
 export const AUTHOR = '反旗 FlagBreaker';
 export const LOCALES = ['zh', 'en'] as const;
-export const DEFAULT_LOCALE = 'zh';
+export const DEFAULT_LOCALE = 'en';
 
 // 社交与外部链接
 // APP_URL：主应用部署地址，主项目部署到 Vercel 后请替换为真实域名（如 https://toclick.vercel.app）

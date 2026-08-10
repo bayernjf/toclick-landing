@@ -12,16 +12,17 @@ import Footer from '../../components/Footer.astro';
 import { faqData } from '../../data/faq';
 import { stepsData } from '../../data/features';
 
-const lang = 'en' as const;
+const lang = 'zh' as const;
 const faqSchema = faqData[lang];
 const steps = stepsData[lang];
 
+// HowTo schema：让 AI 搜索识别"如何使用反旗"
 const howToSchema = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
-  name: 'How to use FlagBreaker',
-  description: 'Three steps to use FlagBreaker: raise a flag, check in, receive AI-persona feedback',
-  inLanguage: 'en-US',
+  name: '如何使用反旗 FlagBreaker',
+  description: '三步用上反旗：立 flag、打卡、接收 AI 人设化反馈',
+  inLanguage: 'zh-CN',
   step: steps.map((s, i) => ({
     '@type': 'HowToStep',
     position: i + 1,

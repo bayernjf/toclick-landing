@@ -48,12 +48,12 @@ Both share the same decision tree and compliance red lines; they differ only in 
 
 ## Key links
 
-- [English Home](https://toclick-landing.pages.dev/en/)
-- [中文首页](https://toclick-landing.pages.dev/)
-- [Personas](https://toclick-landing.pages.dev/en/#personas)
-- [Mechanisms](https://toclick-landing.pages.dev/en/#features)
-- [How it works](https://toclick-landing.pages.dev/en/#how)
-- [Protection](https://toclick-landing.pages.dev/en/#protection)
-- [FAQ](https://toclick-landing.pages.dev/en/#faq)
+- [English Home](https://toclick-landing.pages.dev/)
+- [中文首页](https://toclick-landing.pages.dev/zh/)
+- [Personas](https://toclick-landing.pages.dev/#personas)
+- [Mechanisms](https://toclick-landing.pages.dev/#features)
+- [How it works](https://toclick-landing.pages.dev/#how)
+- [Protection](https://toclick-landing.pages.dev/#protection)
+- [FAQ](https://toclick-landing.pages.dev/#faq)
 - [GitHub repo](https://github.com/bayernjf/toclick)
 - [Project guide AGENTS.md](https://github.com/bayernjf/toclick/blob/main/AGENTS.md)
