@@ -1,5 +1,6 @@
 ---
 import BayjfLink from '@bay/landing-ui/components/BayjfLink.astro';
+import StarOnGithub from '@bay/landing-ui/components/StarOnGithub.astro';
 import { useTranslations, localizePath, type Lang } from '../i18n';
 import { SITE_NAME, SITE_NAME_EN, SOCIAL } from '../consts';
 
@@ -12,10 +13,10 @@ const year = new Date().getFullYear();
 const brandName = lang === 'zh' ? SITE_NAME : SITE_NAME_EN;
 
 const links = [
-  { href: SOCIAL.github, label: 'GitHub', external: true },
   { href: SOCIAL.docs, label: lang === 'zh' ? '文档' : 'Docs', external: true },
   { href: SOCIAL.app, label: lang === 'zh' ? '打开 App' : 'Open App', external: true },
   { href: 'https://bayjf.com', label: 'BayJF', external: true },
+  { href: SOCIAL.github, label: 'GitHub', external: true },
   { href: localizePath('/privacy', lang), label: lang === 'zh' ? '隐私政策' : 'Privacy' },
   { href: localizePath('/terms', lang), label: lang === 'zh' ? '服务条款' : 'Terms' },
 ];
@@ -40,6 +41,8 @@ const links = [
         {links.map((l) => (
           l.href === 'https://bayjf.com' ? (
             <BayjfLink size={16} class="text-xs text-ink-400 transition hover:text-ink-100" label={l.label} />
+          ) : l.href === SOCIAL.github ? (
+            <StarOnGithub href="https://github.com/bayernjf/toclick" size={14} class="text-ink-400" />
           ) : (
             <a href={l.href} target="_blank" rel="noopener" class="text-xs text-ink-400 transition hover:text-ink-100">{l.label}</a>
           )
