@@ -21,7 +21,7 @@ export const APP_URL = 'https://toclick.bayjf.com';
 export const SOCIAL = {
   github: 'https://github.com/bayernjf/toclick',
   app: APP_URL,
-  email: 'hi@flagbreaker.app',
+  email: 'b4yernjf@gmail.com',
   docs: 'https://github.com/bayernjf/toclick/blob/main/AGENTS.md',
 };
 
