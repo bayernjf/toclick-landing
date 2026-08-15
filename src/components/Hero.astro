@@ -30,14 +30,14 @@ const t = useTranslations(lang);
     </p>
 
     <div class="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
-      <a
-        href={SOCIAL.app}
-        target="_blank"
-        rel="noopener"
-        class="inline-flex w-full items-center justify-center rounded-lg bg-brand-500 px-6 py-3 text-sm font-medium text-white transition hover:bg-brand-600 sm:w-auto"
+      <button
+        type="button"
+        aria-disabled="true"
+        class="inline-flex w-full cursor-not-allowed items-center justify-center gap-2 rounded-lg bg-brand-500/40 px-6 py-3 text-sm font-medium text-white/70 sm:w-auto"
       >
         {t('hero.cta.primary')}
-      </a>
+        <span class="rounded bg-white/15 px-1.5 py-0.5 text-xs font-normal">{t('cta.comingSoon')}</span>
+      </button>
       <a
         href={SOCIAL.docs}
         target="_blank"
