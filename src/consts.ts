@@ -16,12 +16,12 @@ export const LOCALES = ['zh', 'en'] as const;
 export const DEFAULT_LOCALE = 'en';
 
 // 社交与外部链接
-// APP_URL：主应用部署地址，主项目部署到 Vercel 后请替换为真实域名（如 https://toclick.vercel.app）
-export const APP_URL = 'https://toclick.vercel.app';
+// APP_URL：主应用部署地址
+export const APP_URL = 'https://toclick.bayjf.com';
 export const SOCIAL = {
   github: 'https://github.com/bayernjf/toclick',
   app: APP_URL,
-  email: 'hi@flagbreaker.app',
+  email: 'b4yernjf@gmail.com',
   docs: 'https://github.com/bayernjf/toclick/blob/main/AGENTS.md',
 };
 

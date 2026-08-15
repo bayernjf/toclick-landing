@@ -246,7 +246,7 @@ Supabase PostgreSQL 所有表开启行级安全（RLS），用户只能读写自
 
 - 落地页中文：https://toclick-landing.pages.dev/zh/
 - 落地页英文：https://toclick-landing.pages.dev/
-- 主应用：https://toclick.vercel.app（部署后替换为真实域名）
+- 主应用：https://toclick.bayjf.com
 - GitHub 仓库：https://github.com/bayernjf/toclick
 - 项目指引：https://github.com/bayernjf/toclick/blob/main/AGENTS.md
 - 数据库 schema：https://github.com/bayernjf/toclick/blob/main/flag_breaker_schema.sql
