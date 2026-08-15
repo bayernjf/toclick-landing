@@ -41,7 +41,7 @@ export const ui = {
     'cta.title': '别再让 flag 倒在地上',
     'cta.subtitle': '让一个嘴毒心软的 AI 损友，盯你把今天该做的事做完',
     'cta.button': '打开反旗 App',
-    'cta.comingSoon': '即将上线',
+    'cta.comingSoon': '即将上架',
 
     'footer.tagline': '反向自律 · AI 人设化监督',
     'footer.rights': '保留所有权利。',
