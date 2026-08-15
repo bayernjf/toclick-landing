@@ -96,7 +96,7 @@ npm run check    # 类型检查
    - Output directory: `dist`
    - Node version: `20`（环境变量 `NODE_VERSION=20`）
 4. 推送代码即自动部署
-5. 默认域名：`toclick-landing.pages.dev`
+5. 默认域名：`toclick.bayjf.com`
 
 绑定自定义域名后，需同步修改：
 - `astro.config.mjs` 的 `site` 字段

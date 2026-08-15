@@ -1,4 +1,4 @@
-# https://toclick-landing.pages.dev
+# https://toclick.bayjf.com
 User-agent: *
 Allow: /
 
@@ -33,4 +33,4 @@ Allow: /
 User-agent: Bytespider
 Allow: /
 
-Sitemap: https://toclick-landing.pages.dev/sitemap-index.xml
+Sitemap: https://toclick.bayjf.com/sitemap-index.xml
