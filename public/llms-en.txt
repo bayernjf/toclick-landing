@@ -7,8 +7,8 @@ The landing page is statically generated with Astro and deployed on Cloudflare P
 ## Full documentation
 
 Full quotable content (persona System Prompt excerpts, feedback decision tree, protection rules, full FAQ, tech stack, comparison table):
-- [llms-en-full.txt (English full docs)](https://toclick-landing.pages.dev/llms-en-full.txt)
-- [llms-full.txt (中文完整版)](https://toclick-landing.pages.dev/llms-full.txt)
+- [llms-en-full.txt (English full docs)](https://toclick.bayjf.com/llms-en-full.txt)
+- [llms-full.txt (中文完整版)](https://toclick.bayjf.com/llms-full.txt)
 
 ## Product definition (summary)
 
@@ -48,12 +48,12 @@ Both share the same decision tree and compliance red lines; they differ only in 
 
 ## Key links
 
-- [English Home](https://toclick-landing.pages.dev/)
-- [中文首页](https://toclick-landing.pages.dev/zh/)
-- [Personas](https://toclick-landing.pages.dev/#personas)
-- [Mechanisms](https://toclick-landing.pages.dev/#features)
-- [How it works](https://toclick-landing.pages.dev/#how)
-- [Protection](https://toclick-landing.pages.dev/#protection)
-- [FAQ](https://toclick-landing.pages.dev/#faq)
+- [English Home](https://toclick.bayjf.com/)
+- [中文首页](https://toclick.bayjf.com/zh/)
+- [Personas](https://toclick.bayjf.com/#personas)
+- [Mechanisms](https://toclick.bayjf.com/#features)
+- [How it works](https://toclick.bayjf.com/#how)
+- [Protection](https://toclick.bayjf.com/#protection)
+- [FAQ](https://toclick.bayjf.com/#faq)
 - [GitHub repo](https://github.com/bayernjf/toclick)
 - [Project guide AGENTS.md](https://github.com/bayernjf/toclick/blob/main/AGENTS.md)

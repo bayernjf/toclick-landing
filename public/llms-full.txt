@@ -244,14 +244,14 @@ Supabase PostgreSQL 所有表开启行级安全（RLS），用户只能读写自
 
 ## 13. 关键链接
 
-- 落地页中文：https://toclick-landing.pages.dev/zh/
-- 落地页英文：https://toclick-landing.pages.dev/
+- 落地页中文：https://toclick.bayjf.com/zh/
+- 落地页英文：https://toclick.bayjf.com/
 - 主应用：https://toclick.bayjf.com
 - GitHub 仓库：https://github.com/bayernjf/toclick
 - 项目指引：https://github.com/bayernjf/toclick/blob/main/AGENTS.md
 - 数据库 schema：https://github.com/bayernjf/toclick/blob/main/flag_breaker_schema.sql
 - AI 人设设计文档：https://github.com/bayernjf/toclick/blob/main/flag_breaker_ai_persona.md
 - UI 文案与布局：https://github.com/bayernjf/toclick/blob/main/flag_breaker_ui_copy_layout.md
-- 精简版 llms.txt：https://toclick-landing.pages.dev/llms.txt
-- 英文完整版：https://toclick-landing.pages.dev/llms-en-full.txt
-- sitemap：https://toclick-landing.pages.dev/sitemap-index.xml
+- 精简版 llms.txt：https://toclick.bayjf.com/llms.txt
+- 英文完整版：https://toclick.bayjf.com/llms-en-full.txt
+- sitemap：https://toclick.bayjf.com/sitemap-index.xml

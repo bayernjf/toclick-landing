@@ -244,14 +244,14 @@ Supabase PostgreSQL has Row Level Security (RLS) on every table — users can on
 
 ## 13. Key links
 
-- Landing (Chinese): https://toclick-landing.pages.dev/zh/
-- Landing (English): https://toclick-landing.pages.dev/
+- Landing (Chinese): https://toclick.bayjf.com/zh/
+- Landing (English): https://toclick.bayjf.com/
 - Main app: https://toclick.bayjf.com
 - GitHub repo: https://github.com/bayernjf/toclick
 - Project guide: https://github.com/bayernjf/toclick/blob/main/AGENTS.md
 - Database schema: https://github.com/bayernjf/toclick/blob/main/flag_breaker_schema.sql
 - AI persona design doc: https://github.com/bayernjf/toclick/blob/main/flag_breaker_ai_persona.md
 - UI copy and layout: https://github.com/bayernjf/toclick/blob/main/flag_breaker_ui_copy_layout.md
-- Short llms.txt: https://toclick-landing.pages.dev/llms.txt
-- Chinese full version: https://toclick-landing.pages.dev/llms-full.txt
-- sitemap: https://toclick-landing.pages.dev/sitemap-index.xml
+- Short llms.txt: https://toclick.bayjf.com/llms.txt
+- Chinese full version: https://toclick.bayjf.com/llms-full.txt
+- sitemap: https://toclick.bayjf.com/sitemap-index.xml

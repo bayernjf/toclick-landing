@@ -2,7 +2,7 @@
 // 绑定自定义域名后，需同步修改 astro.config.mjs 的 site 字段
 
 // Cloudflare Pages 默认域名：<project-name>.pages.dev
-export const SITE_URL = 'https://toclick-landing.pages.dev';
+export const SITE_URL = 'https://toclick.bayjf.com';
 export const SITE_NAME = '反旗';
 export const SITE_NAME_EN = 'FlagBreaker';
 export const SITE_TITLE = '反旗 FlagBreaker | AI 损友盯你把 flag 立住';
