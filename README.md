@@ -94,7 +94,7 @@ npm run check    # 类型检查
    - Framework preset: `Astro`
    - Build command: `npm run build`
    - Output directory: `dist`
-   - Node version: `20`（环境变量 `NODE_VERSION=20`）
+   - Node version: `22`（环境变量 `NODE_VERSION=22`；Astro 7 要求 Node >= 22.12）
 4. 推送代码即自动部署
 5. 默认域名：`toclick.bayjf.com`
 
